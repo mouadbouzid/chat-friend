@@ -49,6 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 hide: true,
                 icon: Iconsax.password_check,
                 isPass: true,
+                size: 5,
               ),
             ],
           ),

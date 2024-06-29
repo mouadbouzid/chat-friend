@@ -8,6 +8,7 @@ class CustomTextFormField extends StatefulWidget {
   final String hint;
   final IconData icon;
   bool hide;
+  double size;
   final bool isPass;
   final TextEditingController controller;
   CustomTextFormField({
@@ -16,6 +17,7 @@ class CustomTextFormField extends StatefulWidget {
     required this.hint,
     required this.icon,
     this.hide = false,
+    this.size = 16,
     this.isPass = false,
   });
 
@@ -30,7 +32,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       obscureText: widget.hide,
       controller: widget.controller,
       decoration: InputDecoration(
-          contentPadding: EdgeInsets.all(16),
+          contentPadding: EdgeInsets.symmetric(vertical: widget.size),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
               borderSide: BorderSide(color: primaryColor)),
