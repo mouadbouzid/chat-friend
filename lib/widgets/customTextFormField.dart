@@ -29,6 +29,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: (value)=>value!.isEmpty ? "Required": null,
       obscureText: widget.hide,
       controller: widget.controller,
       decoration: InputDecoration(
