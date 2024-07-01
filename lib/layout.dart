@@ -1,5 +1,9 @@
 import 'dart:ffi';
 
+import 'package:chat_friend/screens/home/chat_screen.dart';
+import 'package:chat_friend/screens/home/contacts_screen.dart';
+import 'package:chat_friend/screens/home/groups_screen.dart';
+import 'package:chat_friend/screens/home/settings_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -26,18 +30,10 @@ class _LayoutAppState extends State<LayoutApp> {
           });
         },
         children: [
-          Container(
-            color: Colors.blue,
-          ),
-          Container(
-            color: const Color.fromARGB(255, 58, 124, 177),
-          ),
-          Container(
-            color: const Color.fromARGB(255, 61, 81, 97),
-          ),
-          Container(
-            color: const Color.fromARGB(255, 18, 19, 20),
-          ),
+          ChatScreen(),
+          GroupsScreen(),
+          ContactsScreen(),
+          SettingsScreen()
         ],
       ),
       bottomNavigationBar: NavigationBar(
