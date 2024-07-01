@@ -1,3 +1,4 @@
+import 'package:chat_friend/layout.dart';
 import 'package:chat_friend/screens/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
             seedColor: Colors.blue, brightness: Brightness.light),
         useMaterial3: true,
       ),
-      home: LoginScreen(),
+      home: LayoutApp(),
     );
   }
 }
