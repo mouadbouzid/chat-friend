@@ -10,10 +10,6 @@ class ContactsScreen extends StatefulWidget {
 class _ContactsScreenState extends State<ContactsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Chat Friend"),
-      ),
-    );
+    return Scaffold();
   }
 }
