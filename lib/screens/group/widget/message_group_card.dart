@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import "package:iconsax/iconsax.dart";
 
-class MessageChatCard extends StatelessWidget {
+class MessageGroupCard extends StatelessWidget {
   final int index;
-  const MessageChatCard({
+  const MessageGroupCard({
     super.key,
     required this.index,
   });
@@ -34,8 +34,9 @@ class MessageChatCard extends StatelessWidget {
               constraints: BoxConstraints(
                   maxWidth: MediaQuery.sizeOf(context).width / 1.5),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  index % 2 != 0 ? Text("Mouad") : SizedBox(),
                   Text("dllllllllllllllllllffffffffffffffffffffll"),
                   Row(
                     mainAxisSize: MainAxisSize.min,

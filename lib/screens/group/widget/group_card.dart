@@ -1,4 +1,4 @@
-import 'package:chat_friend/screens/chat/chat_person_screen.dart';
+import 'package:chat_friend/screens/group/chat_group_screen.dart';
 import 'package:chat_friend/utils/color.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class GroupCard extends StatelessWidget {
       child: ListTile(
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => ChatPersonScreen()));
+              MaterialPageRoute(builder: (context) => ChatGroupScreen()));
         },
         title: Text("Group name"),
         subtitle: Text("Last Message"),
