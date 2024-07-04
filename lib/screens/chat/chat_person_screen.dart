@@ -36,15 +36,39 @@ class _ChatPersonScreenState extends State<ChatPersonScreen> {
         child: Column(
           children: [
             Expanded(
-                child: ListView.builder(
-              reverse: true,
-              itemCount: 5,
-              itemBuilder: (context, index) {
-                return MessageChatCard(
-                  index: index,
-                );
-              },
-            )),
+              /*child: ListView.builder(
+                reverse: true,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return MessageChatCard(
+                    index: index,
+                  );
+                },
+              ),*/
+              child: Center(
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            "👋",
+                            style: Theme.of(context).textTheme.displayLarge,
+                          ),
+                          Text(
+                            "Say Hii!!",
+                            style: Theme.of(context).textTheme.bodyLarge,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
             Row(
               children: [
                 Expanded(
