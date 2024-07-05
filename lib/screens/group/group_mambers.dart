@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-class GroupMambers extends StatefulWidget {
-  const GroupMambers({super.key});
+class GroupMembers extends StatefulWidget {
+  const GroupMembers.GroupMembers({super.key});
 
   @override
-  State<GroupMambers> createState() => _GroupMambersState();
+  State<GroupMembers> createState() => _GroupMembersState();
 }
 
-class _GroupMambersState extends State<GroupMambers> {
+class _GroupMembersState extends State<GroupMembers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Group members"),
+        actions: [IconButton(onPressed: (){}, icon: Icon(Iconsax.user_edit))],
+      ),
       body: Container(
         padding: EdgeInsets.all(20),
         child: Column(
@@ -33,7 +36,7 @@ class _GroupMambersState extends State<GroupMambers> {
                             IconButton(
                                 onPressed: () {}, icon: Icon(Iconsax.trash)),
                             IconButton(
-                                onPressed: () {}, icon: Icon(Iconsax.user))
+                                onPressed: () {}, icon: Icon(Iconsax.user_tick))
                           ],
                         ),
                       );

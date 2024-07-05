@@ -29,13 +29,15 @@ class _ChatGroupScreenState extends State<ChatGroupScreen> {
         actions: [
           IconButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => GroupMambers()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => GroupMembers.GroupMembers()));
               },
               icon: const Icon(Iconsax.user)),
         ],
       ),
-      body: Padding(
+      body: Container(
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Column(
           children: [
