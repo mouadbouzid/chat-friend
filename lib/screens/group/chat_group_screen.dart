@@ -1,3 +1,4 @@
+import 'package:chat_friend/screens/group/group_mambers.dart';
 import 'package:chat_friend/screens/group/widget/message_group_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,12 @@ class _ChatGroupScreenState extends State<ChatGroupScreen> {
           ],
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Iconsax.user)),
+          IconButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => GroupMambers()));
+              },
+              icon: const Icon(Iconsax.user)),
         ],
       ),
       body: Padding(
