@@ -1,3 +1,4 @@
+import 'package:chat_friend/screens/group/group_edit.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -14,7 +15,14 @@ class _GroupMembersState extends State<GroupMembers> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Group members"),
-        actions: [IconButton(onPressed: (){}, icon: Icon(Iconsax.user_edit))],
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => GroupEdit()));
+              },
+              icon: Icon(Iconsax.user_edit))
+        ],
       ),
       body: Container(
         padding: EdgeInsets.all(20),
