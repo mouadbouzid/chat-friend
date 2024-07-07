@@ -1,5 +1,7 @@
 import 'package:chat_friend/screens/settings/profile.dart';
+import 'package:chat_friend/screens/settings/qr_code.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -27,7 +29,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 radius: 30,
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => QrCode()));
+                },
                 icon: Icon(Iconsax.scan_barcode),
               ),
             ),
@@ -44,6 +49,27 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             Card(
               child: ListTile(
+                onTap: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          content: SingleChildScrollView(
+                            child: BlockPicker(
+                              onColorChanged: (value) {},
+                              pickerColor: Colors.blue,
+                            ),
+                          ),
+                          actions: [
+                            ElevatedButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text("Done"))
+                          ],
+                        );
+                      });
+                },
                 title: Text("Theme"),
                 leading: Icon(Iconsax.color_swatch),
               ),
