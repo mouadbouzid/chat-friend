@@ -21,9 +21,7 @@ class _LayoutAppState extends State<LayoutApp> {
   @override
   Widget build(BuildContext context) {
     List<Widget> screens = [];
-    return Scaffold(appBar: AppBar(
-        title: const Text("Chat Friend"),
-      ),
+    return Scaffold(
       body: PageView(
         controller: pageController,
         onPageChanged: (value) {

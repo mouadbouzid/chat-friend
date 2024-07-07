@@ -14,7 +14,9 @@ class GroupsScreen extends StatefulWidget {
 class _GroupsScreenState extends State<GroupsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(appBar: AppBar(
+        title: const Text("Chat Friend"),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(

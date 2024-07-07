@@ -18,6 +18,9 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Chat Friend"),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showBottomSheet(

@@ -11,10 +11,40 @@ class ContactsScreen extends StatefulWidget {
 }
 
 class _ContactsScreenState extends State<ContactsScreen> {
+  bool search = false;
   TextEditingController addEmailController = TextEditingController();
+  TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          search
+              ? IconButton(
+                  onPressed: () {
+                    setState(() {
+                      search = false;
+                    });
+                  },
+                  icon: Icon(Iconsax.close_circle))
+              : IconButton(
+                  onPressed: () {
+                    setState(() {
+                      search = true;
+                    });
+                  },
+                  icon: Icon(Iconsax.search_normal))
+        ],
+        title: search
+            ? Expanded(
+                child: TextField(
+                autofocus: true,
+                controller: searchController,
+                decoration: InputDecoration(
+                    hintText: "Search by Name", border: InputBorder.none),
+              ))
+            : Text("Chat Friend"),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showBottomSheet(
