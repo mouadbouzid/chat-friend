@@ -48,7 +48,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           controller: addEmailController,
                           hint: "Email",
                           icon: Iconsax.direct),
-                      SizedBox(
+                      const SizedBox(
                         height: 16,
                       ),
                       ElevatedButton(

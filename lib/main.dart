@@ -1,5 +1,6 @@
 import 'package:chat_friend/layout.dart';
 import 'package:chat_friend/screens/auth/login_screen.dart';
+import 'package:chat_friend/screens/home/chat_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

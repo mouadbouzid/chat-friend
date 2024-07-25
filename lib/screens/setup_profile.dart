@@ -15,6 +15,8 @@ class SetupProfile extends StatefulWidget {
 
 class _SetupProfileState extends State<SetupProfile> {
   TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,15 +45,43 @@ class _SetupProfileState extends State<SetupProfile> {
                 "Welcome",
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               CustomTextFormField(
-                controller: emailController,
+                controller: nameController,
                 hint: "Name",
                 hide: false,
                 icon: Iconsax.user,
               ),
+              const SizedBox(
+                height: 20,
+              ),
+              CustomTextFormField(
+                      controller: emailController,
+                      hint: "Email",
+                      hide: false,
+                      icon: Iconsax.direct,
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    CustomTextFormField(
+                      controller: passwordController,
+                      hint: "Password",
+                      hide: true,
+                      icon: Iconsax.password_check,
+                      isPass: true,
+                      size: 5,
+                    ),
+                    const SizedBox(height: 10),
+                    CustomTextFormField(
+                      controller: passwordController,
+                      hint: "Re-enter password",
+                      hide: true,
+                      icon: Iconsax.password_check,
+                      isPass: true,
+                      size: 5,
+                    ),
+                    
               const SizedBox(
                 height: 20,
               ),
