@@ -12,8 +12,9 @@ class ContactsScreen extends StatefulWidget {
 
 class _ContactsScreenState extends State<ContactsScreen> {
   bool search = false;
-  TextEditingController addEmailController = TextEditingController();
-  TextEditingController searchController = TextEditingController();
+  final TextEditingController addEmailController = TextEditingController();
+  final TextEditingController searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,89 +25,109 @@ class _ContactsScreenState extends State<ContactsScreen> {
                   onPressed: () {
                     setState(() {
                       search = false;
+                      searchController.clear();
                     });
                   },
-                  icon: Icon(Iconsax.close_circle))
+                  icon: const Icon(Iconsax.close_circle),
+                )
               : IconButton(
                   onPressed: () {
                     setState(() {
                       search = true;
                     });
                   },
-                  icon: Icon(Iconsax.search_normal))
+                  icon: const Icon(Iconsax.search_normal),
+                ),
         ],
         title: search
-            ? Expanded(
+            ? Flexible(
                 child: TextField(
-                autofocus: true,
-                controller: searchController,
-                decoration: InputDecoration(
-                    hintText: "Search by Name", border: InputBorder.none),
-              ))
-            : Text("Chat Friend"),
+                  autofocus: true,
+                  controller: searchController,
+                  decoration: const InputDecoration(
+                    hintText: "Search by Name",
+                    border: InputBorder.none,
+                  ),
+                ),
+              )
+            : const Text("Chat Friend"),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showBottomSheet(
-              context: context,
-              builder: (context) {
-                return Container(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            "Etrer Email of your Friend",
-                            style: Theme.of(context).textTheme.labelLarge,
-                          ),
-                          Spacer(),
-                          IconButton(
-                              onPressed: () {},
-                              icon: Icon(Iconsax.scan_barcode))
-                        ],
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            ),
+            builder: (context) {
+              return Padding(
+                padding: EdgeInsets.only(
+                  left: 20,
+                  right: 20,
+                  top: 20,
+                  bottom: MediaQuery.of(context).viewInsets.bottom + 20,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          "Enter email of your friend",
+                          style: Theme.of(context).textTheme.labelLarge,
+                        ),
+                        const Spacer(),
+                        IconButton(
+                          onPressed: () {
+                            // TODO: implement barcode scanning
+                          },
+                          icon: const Icon(Iconsax.scan_barcode),
+                        ),
+                      ],
+                    ),
+                    CustomTextFormField(
+                      controller: addEmailController,
+                      hint: "Email",
+                      icon: Iconsax.direct,
+                    ),
+                    const SizedBox(height: 16),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.all(12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        backgroundColor:
+                            Theme.of(context).colorScheme.primaryContainer,
                       ),
-                      CustomTextFormField(
-                          controller: addEmailController,
-                          hint: "Email",
-                          icon: Iconsax.direct),
-                      SizedBox(
-                        height: 16,
+                      onPressed: () {
+                        // TODO: Add contact logic
+                      },
+                      child: const Center(
+                        child: Text("Add contact"),
                       ),
-                      ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(12),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12)),
-                              backgroundColor: Theme.of(context)
-                                  .colorScheme
-                                  .primaryContainer),
-                          onPressed: () {},
-                          child: Center(
-                            child: Text(
-                              "add contact",
-                            ),
-                          ))
-                    ],
-                  ),
-                );
-              });
+                    ),
+                  ],
+                ),
+              );
+            },
+          );
         },
         child: const Icon(Iconsax.user_add),
       ),
-      body: Container(
-        padding: EdgeInsets.all(20),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             Expanded(
-                child: ListView.builder(
-              itemCount: 7,
-              itemBuilder: (context, index) {
-                return ContactsCard();
-              },
-            ))
+              child: ListView.builder(
+                itemCount: 7,
+                itemBuilder: (context, index) {
+                  return const ContactsCard();
+                },
+              ),
+            ),
           ],
         ),
       ),

@@ -1,5 +1,3 @@
-import 'package:chat_friend/screens/chat/widgets/message_chat_card.dart';
-import 'package:chat_friend/utils/color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -19,7 +17,7 @@ class _ChatPersonScreenState extends State<ChatPersonScreen> {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Mouad"),
+            const Text("Mouad"),
             Text(
               "Last see 12:00 Pm",
               style: Theme.of(context).textTheme.labelMedium,
@@ -32,7 +30,7 @@ class _ChatPersonScreenState extends State<ChatPersonScreen> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Column(
           children: [
             Expanded(
@@ -83,9 +81,10 @@ class _ChatPersonScreenState extends State<ChatPersonScreen> {
                             children: [
                               IconButton(
                                   onPressed: () {},
-                                  icon: Icon(Iconsax.emoji_happy)),
+                                  icon: const Icon(Iconsax.emoji_happy)),
                               IconButton(
-                                  onPressed: () {}, icon: Icon(Iconsax.camera)),
+                                  onPressed: () {},
+                                  icon: const Icon(Iconsax.camera)),
                             ],
                           ),
                           contentPadding: const EdgeInsets.symmetric(
@@ -95,7 +94,7 @@ class _ChatPersonScreenState extends State<ChatPersonScreen> {
                     ),
                   ),
                 ),
-                IconButton(onPressed: () {}, icon: Icon(Iconsax.send1))
+                IconButton(onPressed: () {}, icon: const Icon(Iconsax.send1))
               ],
             ),
           ],

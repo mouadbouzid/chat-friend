@@ -18,9 +18,10 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  final key = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
-    final key = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(

@@ -19,28 +19,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
         title: const Text("Chat Friend"),
       ),
       body: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             ListTile(
               minVerticalPadding: 30,
-              title: Text("Name"),
-              leading: CircleAvatar(
+              title: const Text("Name"),
+              leading: const CircleAvatar(
                 radius: 30,
               ),
               trailing: IconButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => QrCode()));
+                      MaterialPageRoute(builder: (context) => const QrCode()));
                 },
-                icon: Icon(Iconsax.scan_barcode),
+                icon: const Icon(Iconsax.scan_barcode),
               ),
             ),
             Card(
               child: ListTile(
-                title: Text("Profile"),
-                leading: Icon(Iconsax.user),
-                trailing: Icon(Iconsax.arrow_right_3),
+                title: const Text("Profile"),
+                leading: const Icon(Iconsax.user),
+                trailing: const Icon(Iconsax.arrow_right_3),
                 onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Profile()));
@@ -65,23 +65,23 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
-                                child: Text("Done"))
+                                child: const Text("Done"))
                           ],
                         );
                       });
                 },
-                title: Text("Theme"),
-                leading: Icon(Iconsax.color_swatch),
+                title: const Text("Theme"),
+                leading: const Icon(Iconsax.color_swatch),
               ),
             ),
             Card(
               child: ListTile(
-                leading: Icon(Iconsax.sun_1),
-                title: Text("Dark mode"),
-                trailing: Switch(value: true, onChanged: (value) {}),
+                leading: const Icon(Iconsax.sun_1),
+                title: const Text("Dark mode"),
+                trailing: Switch(value: false, onChanged: (value) {}),
               ),
             ),
-            Card(
+            const Card(
               child: ListTile(
                 title: Text("Sigout"),
                 trailing: Icon(Iconsax.logout_1),

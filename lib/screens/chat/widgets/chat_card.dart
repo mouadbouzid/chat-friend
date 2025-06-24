@@ -2,6 +2,8 @@ import 'package:chat_friend/screens/chat/chat_person_screen.dart';
 import 'package:chat_friend/utils/color.dart';
 import 'package:flutter/material.dart';
 
+/// This widget displays the chat preview for a person.
+
 class ChatCard extends StatelessWidget {
   const ChatCard({
     super.key,
@@ -12,17 +14,19 @@ class ChatCard extends StatelessWidget {
     return Card(
       child: ListTile(
         onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => ChatPersonScreen()));
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ChatPersonScreen()),
+          );
         },
-        title: Text("Name"),
-        subtitle: Text("Last Message"),
-        leading: CircleAvatar(),
+        title: const Text("Name"),
+        subtitle: const Text("Last Message"),
+        leading: const CircleAvatar(),
         trailing: Badge(
           backgroundColor: primaryColor,
-          padding: EdgeInsets.symmetric(horizontal: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 12),
           largeSize: 30,
-          label: Text("2"),
+          label: const Text("2"),
         ),
       ),
     );

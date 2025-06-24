@@ -2,6 +2,8 @@ import 'package:chat_friend/screens/group/chat_group_screen.dart';
 import 'package:chat_friend/utils/color.dart';
 import 'package:flutter/material.dart';
 
+// This widget displays a chat preview card for a group.
+
 class GroupCard extends StatelessWidget {
   const GroupCard({
     super.key,
@@ -15,16 +17,16 @@ class GroupCard extends StatelessWidget {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => ChatGroupScreen()));
         },
-        title: Text("Group name"),
-        subtitle: Text("Last Message"),
-        leading: CircleAvatar(
+        title: const Text("Group name"),
+        subtitle: const Text("Last Message"),
+        leading: const CircleAvatar(
           child: Text("G"),
         ),
         trailing: Badge(
           backgroundColor: primaryColor,
-          padding: EdgeInsets.symmetric(horizontal: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 12),
           largeSize: 30,
-          label: Text("2"),
+          label: const Text("2"),
         ),
       ),
     );

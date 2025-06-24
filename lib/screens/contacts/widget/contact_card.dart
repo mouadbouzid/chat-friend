@@ -1,6 +1,8 @@
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 
+// This widget displays a person in your contacts list.
+
 class ContactsCard extends StatelessWidget {
   const ContactsCard({
     super.key,
@@ -10,10 +12,10 @@ class ContactsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: Text("Name"),
+        title: const Text("Name"),
         trailing: IconButton(
           onPressed: () {},
-          icon: Icon(Iconsax.message),
+          icon: const Icon(Iconsax.message),
         ),
       ),
     );

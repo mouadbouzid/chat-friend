@@ -1,6 +1,4 @@
-import 'package:chat_friend/utils/color.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 class Profile extends StatefulWidget {
@@ -11,10 +9,10 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  TextEditingController nomController = TextEditingController();
+  final TextEditingController nomController = TextEditingController();
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     nomController.text = "My name";
   }
@@ -23,94 +21,104 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Profile"),
+        title: const Text("Profile"),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             Center(
               child: Stack(
+                clipBehavior: Clip.none,
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 70,
                   ),
                   Positioned(
-                      bottom: -5,
-                      right: -5,
-                      child: IconButton(
-                        icon: Icon(Iconsax.edit),
-                        onPressed: () {},
-                      ))
+                    bottom: -5,
+                    right: -5,
+                    child: IconButton(
+                      icon: const Icon(Iconsax.edit),
+                      onPressed: () {
+                        // TODO: implement edit avatar
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             Card(
               child: ListTile(
+                leading: const Icon(Iconsax.user),
                 title: TextField(
                   controller: nomController,
                   enabled: false,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: InputBorder.none,
                     labelText: "Name",
                   ),
                 ),
-                leading: Icon(Iconsax.user),
                 trailing: IconButton(
-                  icon: Icon(Iconsax.edit),
-                  onPressed: () {},
+                  icon: const Icon(Iconsax.edit),
+                  onPressed: () {
+                    // TODO: enable editing of name
+                  },
                 ),
               ),
             ),
             Card(
               child: ListTile(
+                leading: const Icon(Iconsax.information),
                 title: TextField(
                   controller: nomController,
                   enabled: false,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: InputBorder.none,
                     labelText: "About",
                   ),
                 ),
-                leading: Icon(Iconsax.information),
                 trailing: IconButton(
-                  icon: Icon(Iconsax.edit),
-                  onPressed: () {},
+                  icon: const Icon(Iconsax.edit),
+                  onPressed: () {
+                    // TODO: enable editing of about
+                  },
                 ),
               ),
             ),
-            Card(
+            const Card(
               child: ListTile(
-                title: Text("Email"),
                 leading: Icon(Iconsax.direct),
+                title: Text("Email"),
                 subtitle: Text("Ex@gmail.com"),
               ),
             ),
-            Card(
+            const Card(
               child: ListTile(
-                title: Text("Joined on"),
                 leading: Icon(Iconsax.timer_1),
+                title: Text("Joined on"),
                 subtitle: Text("01/01/1999"),
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12)),
-                    backgroundColor: Theme.of(context).colorScheme.onPrimary,
-                    padding: const EdgeInsets.all(16)),
-                onPressed: () {},
-                child: Center(
-                    child: Text(
-                  "save".toUpperCase(),
-                  style: const TextStyle(color: Colors.black),
-                ))),
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                backgroundColor: Theme.of(context).colorScheme.onPrimary,
+                padding: const EdgeInsets.all(16),
+              ),
+              onPressed: () {
+                // TODO: implement save action
+              },
+              child: const Center(
+                child: Text(
+                  "SAVE",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+            ),
           ],
         ),
       ),

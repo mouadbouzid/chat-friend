@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
+// A screen that displays a QR code inside a card.
+
 class QrCode extends StatefulWidget {
   const QrCode({super.key});
 
@@ -13,20 +15,18 @@ class _QrCodeState extends State<QrCode> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("QR Code"),
+        title: const Text("QR Code"),
       ),
-      body: Container(
-        child: Center(
-          child: Card(
-            child: Padding(
-              padding: EdgeInsets.all(20),
-              child: Card(
-                color: Colors.white,
-                child: QrImageView(
-                  data: '1234567890',
-                  version: 4,
-                  size: 200.0,
-                ),
+      body: Center(
+        child: Card(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Card(
+              color: Colors.white,
+              child: QrImageView(
+                data: '1234567890', // Data encoded in the QR code
+                version: QrVersions.auto, // Auto-select QR version
+                size: 200.0,
               ),
             ),
           ),
