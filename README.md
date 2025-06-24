@@ -1,16 +1,16 @@
-# chat_friend
+Chat Friend is a cross-platform Flutter app designed for seamless communication. It offers individual and group chat functionality with a clean and intuitive interface.
+Key features include:
 
-A new Flutter project.
+- One-on-one chat with message bubbles and read receipts
 
-## Getting Started
+- Group chat support with member management
 
-This project is a starting point for a Flutter application.
+- Contact list with search and add via email or QR code
 
-A few resources to get you started if this is your first Flutter project:
+Dark mode and theme customization
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Profile editing and QR code sharing
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Modular, well-structured Flutter codebase for easy maintenance
+
+This project is a great starting point for developers interested in building chat apps with Flutter or learning about state management, UI design, and networking.
